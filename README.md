@@ -39,7 +39,7 @@
     * timestamps
   *  relationships
     * belongs to GameSystem
-    * embeds many Sections
+    * has many Sections
 
   * Character model.
     * character_sheet_id
@@ -50,9 +50,9 @@
 
   * Section model.
     * name - string
-    * timestamps
   *  relationships
     * belongs to GameSystem
+    * belongs to CharacterSheet
     * embeds in Character
     * embedded polymorphic as sectional
     * embeds many Traits
