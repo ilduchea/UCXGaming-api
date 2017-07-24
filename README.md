@@ -32,13 +32,19 @@
     * description - string
     * timestamps
   * GameSystem relationships
-    * has many Characters
+    * has many CharacterSheets
     * has many Sections
 
-  * Character model.
+  * CharacterSheet model.
     * timestamps
   *  relationships
     * belongs to GameSystem
+    * embeds many Sections
+
+  * Character model.
+    * character_sheet_id
+    * timestamps
+  *  relationships
     * belongs to User
     * embeds many Sections
 
@@ -57,6 +63,7 @@
     * timestamps
   *  relationships
     * embeds in Section
+
 
 ### Known Bugs
 No known bugs at this time.
