@@ -1,0 +1,77 @@
+# README
+
+# UCXGaming API
+
+## Description
+
+#### _**This API is designed to be the back end for the UCXGaming site. It is a site designed to be an easy place to store and use various tabletop rpg character sheets.**
+
+#### _**By Tyler Stephenson, July 24, 2017**_
+
+### Setup/Installation Requirements
+* clone <link to repo>
+* cd <local repo>
+* run this series of commands:
+  * `$ bundle install`
+  * `$ rails s`
+
+## Planning
+
+1. Specs
+  * User model.
+    * name - string
+    * email - string
+    * admin - boolean
+    * timestamps
+  * User validations.
+    * presence and uniqueness of email
+
+  * GameSystem model.
+    * name - string
+    * publisher - string
+    * description - string
+    * timestamps
+  * GameSystem relationships
+    * has many Characters
+    * has many Sections
+
+  * Character model.
+    * timestamps
+  *  relationships
+    * belongs to GameSystem
+    * belongs to User
+    * embeds many Sections
+
+  * Section model.
+    * name - string
+    * timestamps
+  *  relationships
+    * belongs to GameSystem
+    * embeds in Character
+    * embedded polymorphic as sectional
+    * embeds many Traits
+
+  * Trait model.
+    * name - string
+    * property - string
+    * timestamps
+  *  relationships
+    * embeds in Section
+
+### Known Bugs
+No known bugs at this time.
+
+## Support and Contact details
+* Tyler Stephenson
+* ilduchea@gmail.com
+
+### Technologies Used
+
+* Ruby
+* Rails
+
+### License
+
+*This is web page is licensed under the MIT License.*
+
+Copyright (c) 2017 **Tyler Stephenson**
