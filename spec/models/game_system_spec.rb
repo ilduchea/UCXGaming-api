@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe GameSystem, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many :character_sheets }
+  it { should have_many :sections }
+  it { should have_fields :name, :publisher, :description }
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :publisher }
 end

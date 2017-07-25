@@ -33,6 +33,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
+  gem 'mongoid-rspec', github: 'mongoid-rspec/mongoid-rspec'
 end
 
 group :development do
