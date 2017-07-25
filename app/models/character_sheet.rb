@@ -3,9 +3,9 @@ class CharacterSheet
   include Mongoid::Timestamps
 
   belongs_to :game_system
-  has_many :sections, validate: false
+  has_many :sections, as: :sectional, validate: false
 
-  validates :name, presence: true
+  validates :name, :description, presence: true
 
   field :name
   field :description

@@ -3,7 +3,7 @@ class GameSystem
   include Mongoid::Timestamps
 
   has_many :character_sheets
-  has_many :sections, validate: false
+  has_many :sections, as: :sectional, validate: false
 
   validates :name, :publisher, presence: true
 

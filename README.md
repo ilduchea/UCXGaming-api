@@ -33,28 +33,27 @@
     * timestamps
   * GameSystem relationships
     * has many CharacterSheets
-    * has many Sections
+    * has many Sections, as sectional
 
   * CharacterSheet model.
     * timestamps
   *  relationships
     * belongs to GameSystem
-    * has many Sections
+    * has many Sections, as sectional
 
   * Character model.
     * character_sheet_id
     * timestamps
   *  relationships
     * belongs to User
-    * embeds many Sections
+    * embeds many Sections, as subsection
 
   * Section model.
     * name - string
   *  relationships
-    * belongs to GameSystem
-    * belongs to CharacterSheet
-    * embeds in Character
-    * embedded polymorphic as sectional
+    * belongs to sectional, polymorphic
+    * embedded_in subsection, polymorphic
+    * embeds_many Sections, as subsection
     * embeds many Traits
 
   * Trait model.
