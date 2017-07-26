@@ -22,6 +22,7 @@ require 'rspec/rails'
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 require 'mongoid-rspec'
+require 'mongoid'
 
 RSpec.configure do |config|
   config.include Mongoid::Matchers, type: :model

@@ -15,11 +15,20 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
 require 'mongoid-rspec'
+require 'mongoid'
+
+Mongoid.load!("./config/mongoid.yml", 'test')
 
 SimpleCov.start
 
 RSpec.configure do |config|
   config.include Mongoid::Matchers
+
+  # config.before(:each) do
+  #   db = Mongoid::Config::Test
+  #   # ignore stuff like system.indexes
+  #   db.collection_names.reject {|c| c =~ /^system/}.each {|c| db.drop_collection c}
+  # end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
