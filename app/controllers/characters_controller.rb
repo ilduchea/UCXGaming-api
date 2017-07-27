@@ -6,8 +6,8 @@ class CharactersController < ApplicationController
   end
 
   def create
-    cs = CharacterSheet.find(params[:character_sheet_id])
-    @character = char.set_new_char cs
+    cs = Character.find(params[:character_id])
+    @character = Character.set_new_char cs
     json_response(@character, :created)
   end
 
